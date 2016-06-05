@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "UBER_CLIENT_ID", "\"${getProps('uber.clientid')}\""
     }
     buildTypes {
         release {
@@ -33,6 +34,17 @@ android {
 
 kapt {
     generateStubs = true
+}
+
+def getProps(String propName) {
+    def propsFile = rootProject.file('local.properties')
+    if (propsFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        return props[propName]
+    } else {
+        return "";
+    }
 }
 
 dependencies {

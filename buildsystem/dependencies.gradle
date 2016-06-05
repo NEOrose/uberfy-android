@@ -38,7 +38,7 @@ ext {
             anko_cardview              : "org.jetbrains.anko:anko-cardview-v7:${anko_version}",
             anko_appcompat             : "org.jetbrains.anko:anko-appcompat-v7:${anko_version}",
             glide                      : "com.github.bumptech.glide:glide:3.7.0",
-            uber_sdk                   : "com.uber.sdk:rides-android:0.3.2"
+            uber_sdk                   : "com.uber.sdk:rides-android:0.5.0"
     ]
 
     testDependencies = [
